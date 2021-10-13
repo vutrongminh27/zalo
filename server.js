@@ -41,7 +41,8 @@ app.post("/api/token", function(req, res){
 });
 
 app.get("/", function(req, res){
-    res.sendFile(path.join(__dirname+"/assert/home.html"))
+    // res.sendFile(path.join(__dirname+"/assert/home.html"))
+    res.send("Zalo token")
 })
 
 app.listen(5000, 'localhost', function(){
