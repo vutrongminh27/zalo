@@ -44,7 +44,7 @@ app.get("/", function(req, res){
     res.sendFile(path.join(__dirname+"/assert/home.html"))
 })
 
-server.listen(PORT, 'localhost', function(){
+app.listen(PORT, 'localhost', function(){
     console.log(`Server is running on port ${PORT}.`);
 });
     
