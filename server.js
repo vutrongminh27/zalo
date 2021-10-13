@@ -8,9 +8,10 @@ var corsOptions = {
     origin: "*",
     optionSuccessStatus: 200
   };
+
 app.use(express.static(__dirname + '/assert'));
-app.use(cors(corsOptions), function(req, res, next){
-next()
+app.use(cors(corsOptions), (req, res, next) =>{
+    next()
 });
 
 async function postBack(url = "", data ={}){
@@ -29,7 +30,7 @@ async function postBack(url = "", data ={}){
     return response.json(); 
 }
 
-app.post("/api/token", function(req, res){
+app.post("/api/token", (req, res) =>{
     var token = req.body.AUTORIZATION_CODE;
     var oa_id = req.body.OA_ID;
     if (!token){
@@ -40,12 +41,12 @@ app.post("/api/token", function(req, res){
     }
 });
 
-app.get("", function(req, res){
+app.get("",(req, res) => {
     // res.sendFile(path.join(__dirname+"/assert/home.html"))
     res.send("Zalo token")
 })
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
     console.log(`Server is running on port 5000.`);
 });
     
