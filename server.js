@@ -45,7 +45,7 @@ app.get("", function(req, res){
     res.send("Zalo token")
 })
 
-app.listen(5000, 'localhost', function(){
+app.listen(5000, () => {
     console.log(`Server is running on port 5000.`);
 });
     
