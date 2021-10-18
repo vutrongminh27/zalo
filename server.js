@@ -56,6 +56,10 @@ app.get("/",(req, res) => {
     res.send("Zalo token")
 })
 
+app.get("",(req, res) => {
+    // res.sendFile(path.join(__dirname+"/assert/home.html"))
+    res.send("Zalo token")
+})
 app.listen(PORT, () => {
     console.log(`Server is running on port 5000.`);
 });
