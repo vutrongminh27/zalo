@@ -39,8 +39,8 @@ function postData(url = '', data = {}){
 
 app.get("/code",(req, res) => {
     // res.sendFile(path.join(__dirname+"/assert/home.html"))
-    var accessToken = "adadaa"//req.query.code; 
-    var id = "11111"//req.query.oa_id;
+    var accessToken = req.query.code; 
+    var id = req.query.oa_id;
     if (!accessToken){
         res.status(500).send({ message : "No token provided"})
     }else{
