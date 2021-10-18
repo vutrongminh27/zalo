@@ -3,6 +3,8 @@ const app = express()
 const cors = require("cors");
 const path = require("path");
 var server = require("http").createServer(app);
+import fetch from "node-fetch";
+globalThis.fetch = fetch;
 const PORT = process.env.PORT || 5000;
 var corsOptions = {
     origin: "*",
