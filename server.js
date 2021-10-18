@@ -34,13 +34,13 @@ app.get("/code",(req, res) => {
     // res.sendFile(path.join(__dirname+"/assert/home.html"))
     var accessToken = req.query.code;
     var id = req.query.oa_id;
-    if (!token){
+    if (!accessToken){
         res.status(500).send({ message : "No token provided"})
     }else{
         res.status(200).send({ message : "Token revolved"})
-        console.log(token)
-        console.log(oa_id)
-        postData('http://113.161.152.35:2087/api/Fingers/ZaloAuthorization', {'token' : accessToken , 'oa_id' : id})
+        console.log(accessToken)
+        console.log(id)
+        postData('http://113.161.152.35:2087/api/Fingers/ZaloAuthorization', {token : accessToken , oa_id : id})
             .then(data => {
                 console.log(data); // JSON data parsed by `data.json()` call
             });
