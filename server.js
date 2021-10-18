@@ -40,7 +40,7 @@ app.get("/code",(req, res) => {
         res.status(200).send({ message : "Token revolved"})
         console.log(token)
         console.log(oa_id)
-        postData('http://113.161.152.35:2087/api/Fingers/ZaloAuthorization', { token : accessToken , oa_id : id})
+        postData('http://113.161.152.35:2087/api/Fingers/ZaloAuthorization', {'token' : accessToken , 'oa_id' : id})
             .then(data => {
                 console.log(data); // JSON data parsed by `data.json()` call
             });
