@@ -14,21 +14,7 @@ app.use(cors(corsOptions), (req, res, next) =>{
     next()
 });
 
-async function postBack(url = "", data ={}){
-    const response = await fetch(url, {
-        method : 'POST',
-        mode: 'cors',
-        cache: 'no-cache',
-        credentials: 'same-origin',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        redirect: 'follow',
-        referrerPolicy: 'no-referrer',
-        body: JSON.stringify(data)
-    });
-    return response.json(); 
-}
+
 async function postData(url = '', data = {}){
     const response = await fetch(url, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -67,6 +53,21 @@ app.get("",(req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on port 5000.`);
 });
-    
+
+async function postBack(url = "", data ={}){
+    const response = await fetch(url, {
+        method : 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(data)
+    });
+    return response.json(); 
+}
 
 // r1G7Q~AOEiV5SM~1J645utXEkV.37Tkzds7k1
