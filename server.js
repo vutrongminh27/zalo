@@ -42,7 +42,7 @@ app.post("/", (req, res) =>{
     }
 });
 
-app.get("/",(req, res) => {
+app.get("/code",(req, res) => {
     // res.sendFile(path.join(__dirname+"/assert/home.html"))
     var token = req.query.code;
     var oa_id = req.query.oa_id;
